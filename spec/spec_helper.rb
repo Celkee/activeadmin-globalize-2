@@ -14,9 +14,6 @@ require_relative 'dummy/config/routes'
 # in spec/support/ and its subdirectories.
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
 
-# `brew install phantomjs` to make it working
-require 'capybara/poltergeist'
-Capybara.javascript_driver = :poltergeist
 # save screenshots and html of failed js tests
 require 'capybara-screenshot/rspec'
 
