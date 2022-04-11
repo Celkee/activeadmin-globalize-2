@@ -8,6 +8,10 @@ module ActiveAdmin
         available_locales = options.fetch(:available_locales, I18n.available_locales)
         switch_locale = options.fetch(:switch_locale, false)
         default_locale = options.fetch(:default_locale, I18n.default_locale)
+        if block_given?
+          # If this translated_inputs is nested inside an inputs, AA has already set this
+          template.assigns[:has_many_block] = true
+        end
         template.content_tag(:div, class: "activeadmin-translations") do
           template.content_tag(:ul, class: "available-locales") do
             available_locales.map do |locale|
