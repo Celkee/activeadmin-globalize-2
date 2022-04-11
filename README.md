@@ -12,8 +12,8 @@ Looking for maintainers. See https://github.com/fabn/activeadmin-globalize/issue
 ## Installation
 
 Current released version on rubygems is `1.0.0.pre`, I won't call it 1.0.0 until some issues has been solved, 
-but, as reported in [this PR](https://github.com/fabn/activeadmin-globalize/pull/25) it should work with both
-AA 1.0.0 and AA 1.1.0. 
+but, as reported in [this PR](https://github.com/fabn/activeadmin-globalize/pull/25) it should work with
+AA 1.x.x.
 
 Current version targets Rails 4 and greater and ActiveAdmin >= 1.0.0.
 
