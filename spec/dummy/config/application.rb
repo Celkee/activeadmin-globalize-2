@@ -22,5 +22,9 @@ module Dummy
     config.i18n.default_locale = :en
     config.i18n.available_locales = [:de, :en, :hu, :it, :'pt-BR', :'pt-PT']
 
+    sl3 = config.active_record.sqlite3
+    if sl3.present? && Rails::VERSION::MAJOR < 6
+      sl3.represent_boolean_as_integer = true
+    end
   end
 end
