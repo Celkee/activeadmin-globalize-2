@@ -23,11 +23,11 @@ feature 'Article localization features', :js do
       submit_button.click
     end
 
-    page.should have_content 'Article was successfully created.'
+    expect(page).to have_content 'Article was successfully created.'
 
     # Retrieve created article from database
-    page.should have_content my_title
-    page.should have_content my_body
+    expect(page).to have_content my_title
+    expect(page).to have_content my_body
   end
 
   context 'Viewing article translations' do
@@ -44,13 +44,13 @@ feature 'Article localization features', :js do
 
       # First row shows default locale with label title
       within first_table_row do
-        page.should have_css 'th', text: 'TITLE'
-        page.should have_css 'span.field-translation', text: article.title
+        expect(page).to have_css 'th', text: 'TITLE'
+        expect(page).to have_css 'span.field-translation', text: article.title
       end
       # Second row shows italian title by default
       within second_table_row do
-        page.should have_css 'th', text: 'ITALIAN TITLE'
-        page.should have_css 'span.field-translation', text: article.translation_for(:it).title
+        expect(page).to have_css 'th', text: 'ITALIAN TITLE'
+        expect(page).to have_css 'span.field-translation', text: article.translation_for(:it).title
       end
 
     end
@@ -59,19 +59,19 @@ feature 'Article localization features', :js do
 
       # First row shows default locale with label title
       within first_table_row do
-        page.should have_css 'th', text: 'TITLE'
-        page.should have_css 'span.field-translation', text: article.title
+        expect(page).to have_css 'th', text: 'TITLE'
+        expect(page).to have_css 'span.field-translation', text: article.title
 
-        flag_link(:hu).find(:xpath, '..').should have_css '.empty:not(.active)'
-        flag_link(:it).find(:xpath, '..').should have_css ':not(.empty):not(.active)'
+        expect(flag_link(:hu).find(:xpath, '..')).to have_css '.empty:not(.active)'
+        expect(flag_link(:it).find(:xpath, '..')).to have_css ':not(.empty):not(.active)'
 
         flag_link(:hu).click # change shown translation
-        flag_link(:hu).find(:xpath, '..').should have_css '.empty.active'
+        expect(flag_link(:hu).find(:xpath, '..')).to have_css '.empty.active'
 
         flag_link(:it).click # change shown translation
-        flag_link(:it).find(:xpath, '..').should have_css ':not(.empty).active'
+        expect(flag_link(:it).find(:xpath, '..')).to have_css ':not(.empty).active'
 
-        page.should have_css 'span.field-translation', text: article.translation_for(:it).title
+        expect(page).to have_css 'span.field-translation', text: article.translation_for(:it).title
       end
 
     end
@@ -80,10 +80,10 @@ feature 'Article localization features', :js do
 
       # Third table has a block translation element
       within third_table_row do
-        page.should have_css 'th', text: 'BODY'
-        page.should have_css 'div.field-translation', text: article.body
+        expect(page).to have_css 'th', text: 'BODY'
+        expect(page).to have_css 'div.field-translation', text: article.body
         tab_link(:it).click # change shown translation
-        page.should have_css 'div.field-translation', text: article.translation_for(:it).body
+        expect(page).to have_css 'div.field-translation', text: article.translation_for(:it).body
       end
 
     end
@@ -97,13 +97,13 @@ feature 'Article localization features', :js do
       # First row shows default locale with label title
       within first_table_row do
         flag_link(:de).click # change shown translation
-        page.should have_css 'span.field-translation.empty', text: 'EMPTY'
+        expect(page).to have_css 'span.field-translation.empty', text: 'EMPTY'
       end
 
       # Third table has a block translation element
       within third_table_row do
         tab_link(:de).click # change shown translation
-        page.should have_css 'div.field-translation span.empty', text: 'EMPTY'
+        expect(page).to have_css 'div.field-translation span.empty', text: 'EMPTY'
       end
 
     end

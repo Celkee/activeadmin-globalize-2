@@ -93,8 +93,8 @@ module Capybara
       @current_admin_user = user
       ensure_on new_admin_user_session_path
       fill_login_form(user.email, password)
-      page.should have_content 'Signed in successfully.'
-      main_menubar.should have_link(user.email, href: admin_admin_user_path(user))
+      expect(page).to have_content 'Signed in successfully.'
+      expect(main_menubar).to have_link(user.email, href: admin_admin_user_path(user))
     end
 
     # Used to find and submit login form
