@@ -135,12 +135,8 @@ $ ->
         updateLocaleButtonsStatus($dom)
         $tabs.filter('.default').click()
 
-  $a = $("a")
-  # jQuery 1.7 introduced "on" and deprecated "bind"
-  # AA 1.2 bumps jquery-rails to >= 4.2, so we can drop "bind" once AA req is bumped
-  bindingMethod = if ("on" of $a && typeof $a.on == 'function') then "on" else "bind"
   # this is to handle elements created with has_many
-  $a[bindingMethod] "click", ->
+  $("a").on "click", ->
     setTimeout(
       -> translations()
       50
