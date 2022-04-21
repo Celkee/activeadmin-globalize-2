@@ -2,26 +2,15 @@
 
 Makes it easy to translate your resource fields.
 
-[![Gem Version](https://badge.fury.io/rb/activeadmin-globalize.svg)](http://badge.fury.io/rb/activeadmin-globalize)
-[![Build Status](https://travis-ci.org/fabn/activeadmin-globalize.svg?branch=develop)](https://travis-ci.org/fabn/activeadmin-globalize)
-
-## Help Needed
-
-Looking for maintainers. See https://github.com/fabn/activeadmin-globalize/issues/26
+[![Gem Version](https://badge.fury.io/rb/activeadmin-globalize-2.svg)](http://badge.fury.io/rb/activeadmin-globalize-2)
 
 ## Installation
 
-Current released version on rubygems is `1.0.0.pre`, I won't call it 1.0.0 until some issues has been solved, 
-but, as reported in [this PR](https://github.com/fabn/activeadmin-globalize/pull/25) it should work with
-AA 1.x.x.
-
-Current version targets Rails 4 and greater and ActiveAdmin >= 1.0.0.
+Current version targets Rails 4.2-5.2 and ActiveAdmin 1.x.
 
 ```ruby
-gem 'activeadmin-globalize', '~> 1.0.0.pre'
+gem 'activeadmin-globalize-2', '~> 1.0.0'
 ```
-
-Previous version with support for Rails 3 is maintained in branch [support/0.6.x](https://github.com/fabn/activeadmin-globalize/tree/support/0.6.x)
 
 ## Require Assets
 
@@ -106,5 +95,4 @@ to symbol (in application.rb)
 
 ## Credits
 
-This work is based on original idea by [@stefanoverna](https://github.com/stefanoverna/activeadmin-globalize),
- I needed it for AA 0.6.x so I forked the original project and expanded it with more features.
+This is a fork of https://github.com/fabn/activeadmin-globalize and PRs have been opened to upstream the changes.

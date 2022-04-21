@@ -5,13 +5,13 @@ require 'active_admin/globalize/version'
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = 'activeadmin-globalize'
+  s.name        = 'activeadmin-globalize-2'
   s.version     = ActiveAdmin::Globalize::VERSION
-  s.authors     = ['Stefano Verna', 'Fabio Napoleoni']
-  s.email       = ['stefano.verna@gmail.com', 'f.napoleoni@gmail.com']
-  s.homepage    = 'http://github.com/fabn/activeadmin-globalize'
+  s.authors     = ['Stefano Verna', 'Fabio Napoleoni', 'tkalliom']
+  s.homepage    = 'http://github.com/Celkee/activeadmin-globalize-2'
   s.summary     = 'Handles globalize translations'
-  s.description = 'Handles globalize translations in ActiveAdmin 1.0 and Rails 4.x-5.x'
+  s.description = 'Handles globalize translations in ActiveAdmin 1.x and Rails 4.x-5.x'
+  s.license     = 'MIT'
 
   s.files = Dir['{app,config,db,lib}/**/*'] + %w(MIT-LICENSE README.md)
 
