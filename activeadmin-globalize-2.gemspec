@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.authors     = ['Stefano Verna', 'Fabio Napoleoni', 'tkalliom']
   s.homepage    = 'http://github.com/Celkee/activeadmin-globalize-2'
   s.summary     = 'Handles globalize translations'
-  s.description = 'Handles globalize translations in ActiveAdmin >=1.3 and Rails 4.x-5.x'
+  s.description = 'Handles globalize translations in ActiveAdmin >=1.3 and Rails 5.2'
   s.license     = 'MIT'
 
   s.files = Dir['{app,config,db,lib}/**/*'] + %w(MIT-LICENSE README.md)
