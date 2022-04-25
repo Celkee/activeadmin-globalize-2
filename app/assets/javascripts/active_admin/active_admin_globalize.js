@@ -3,11 +3,14 @@ $(
     var translations = function () {
       // Hides or shows the + button and the remove button.
       var updateLocaleButtonsStatus = function ($dom) {
-        var $localeList = $dom.find(".add-locale ul li:not(.hidden)");
-        var $localeAdd = $dom.find(".add-locale");
-        return $localeList.length === 0 ?
-          $localeAdd.hide()
-          : $localeAdd.show();
+        $dom.find(".add-locale").each(
+          function () {
+            var $addLocale = $(this);
+            return $addLocale.find('ul li:not(.hidden)').length === 0 ?
+              $addLocale.hide()
+              : $addLocale.show();
+          }
+        );
       };
 
       // Hides or shows the locale tab and its corresponding element in the add menu.
@@ -136,28 +139,30 @@ $(
                     function () {
                       // Get the corresponding fieldsets.
                       var $fieldsets = $(this).siblings("fieldset");
-                      return $("li:not(.add-locale) > a", this).each(
+                      return $("li:not(.add-locale) > a.hidden", this).each(
                         function () {
                           var $tab = $(this);
-                          // Remove them if the locale is hidden.
-                          if ($tab.hasClass("hidden")) {
-                            var localeClassSelector = $tab.attr("href");
-                            // check if it's an existing translation otherwise remove it
-                            var $currentFieldset = $("fieldset" + localeClassSelector);
-                            var $translationId = $("input[id$=_id]", $currentFieldset);
-                            if ($translationId.val()) {
-                              // mark it for database removal appending a _destroy element
-                              var $destroy = $("<input/>").attr({
+                          var localeClassSelector = $tab.attr("href");
+                          // check if it's an existing translation otherwise remove it
+                          var $currentFieldset = $fieldsets.filter(localeClassSelector);
+                          var $translationId = $("input[id$=_id]", $currentFieldset);
+                          if (!$translationId.val()) {
+                            // remove the fieldset from dom so it won't be submitted
+                            return $currentFieldset.remove();
+                          } else if ($(".activeadmin-translations > ul > li:not(.add-locale) > a[href='" + localeClassSelector + "']:not(.hidden)").length === 0) {
+                            // mark it for database removal appending a _destroy element
+                            var $destroy = $("<input/>").attr(
+                              {
                                 type: "hidden",
                                 name: $translationId.attr("name").replace("[id]", "[_destroy]"),
                                 id: $translationId.attr("id").replace("_id", "_destroy"),
                                 value: "1"
-                              });
-                              return $destroy.appendTo($currentFieldset);
-                            } else {
-                              // remove the fieldset from dom so it won't be submitted
-                              return $fieldsets.filter(localeClassSelector).remove();
-                            }
+                              }
+                            );
+                            return $destroy.appendTo($currentFieldset);
+                          } else {
+                            // clear the particular fields for the existing translation
+                            return $currentFieldset.find("input[type=text],textarea").val("");
                           }
                         }
                       );
