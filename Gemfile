@@ -16,8 +16,8 @@ gemspec
 # Gems used by the dummy application
 gem 'sass-rails'
 
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-gem 'therubyracer', platforms: :ruby
+# See https://github.com/rails/execjs#readme for more supported runtimes
+gem 'therubyrhino', platforms: :ruby
 gem 'uglifier'
 
 # jquery-rails is

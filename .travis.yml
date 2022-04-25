@@ -1,8 +1,13 @@
 sudo: false
+# can be upgraded to focal once Ruby 2.3 support is dropped
+dist: bionic
 language: ruby
 rvm:
   - 2.3.4
   - 2.7.6
+  - 3.1.2
+addons:
+  firefox: 91.9.0esr
 env:
   - MOZ_HEADLESS=1
 before_install:
@@ -10,6 +15,9 @@ before_install:
   - mkdir geckodriver
   - tar -xzf geckodriver-linux64.tar.gz -C geckodriver
   - export PATH=$PATH:$PWD/geckodriver
+  # upgrade rubygems and bundler; can be removed once Ruby 2.3 support is dropped
+  - yes | gem update --system --force
+  - gem install bundler
 # Load database schema before rake
 before_script: bundle exec rake db:schema:load
 # Test on all supported rails versions
@@ -25,3 +33,7 @@ matrix:
       gemfile: gemfiles/rails6_1.gemfile
     - rvm: 2.7.6
       gemfile: gemfiles/rails5_2.gemfile
+    - rvm: 3.1.2
+      gemfile: gemfiles/rails5_2.gemfile
+    - rvm: 3.1.2
+      gemfile: gemfiles/rails6_0.gemfile
