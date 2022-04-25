@@ -6,7 +6,7 @@ Makes it easy to translate your resource fields.
 
 ## Installation
 
-Current version targets Rails 5.2 and ActiveAdmin >= 1.3.0.
+Current version targets Rails >= 5.2 and ActiveAdmin >= 1.3.0.
 
 ```ruby
 gem 'activeadmin-globalize-2', '~> 1.0.0'

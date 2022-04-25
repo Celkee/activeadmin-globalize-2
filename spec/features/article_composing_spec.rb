@@ -90,7 +90,7 @@ feature 'Article localization features', :js do
 
     scenario 'Viewing empty translations' do
       # create empty translations for it
-      I18n.with_locale(:de) { article.update_attributes! title: '', body: '' }
+      I18n.with_locale(:de) { article.update! title: '', body: '' }
       # Reload article page
       visit admin_article_path(article)
 

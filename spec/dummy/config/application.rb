@@ -26,5 +26,9 @@ module Dummy
     if sl3.present? && Rails::VERSION::MAJOR < 6
       sl3.represent_boolean_as_integer = true
     end
+
+    if (Rails::VERSION::MAJOR == 6 && Rails::VERSION::MINOR >= 1) || (Rails::VERSION::MAJOR == 7 && Rails::VERSION::MINOR < 1)
+      config.active_record.legacy_connection_handling = false
+    end
   end
 end

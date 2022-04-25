@@ -2,7 +2,7 @@ sudo: false
 language: ruby
 rvm:
   - 2.3.4
-  - 2.4.1
+  - 2.7.6
 env:
   - MOZ_HEADLESS=1
 before_install:
@@ -15,3 +15,13 @@ before_script: bundle exec rake db:schema:load
 # Test on all supported rails versions
 gemfile:
   - gemfiles/rails5_2.gemfile
+  - gemfiles/rails6_0.gemfile
+  - gemfiles/rails6_1.gemfile
+matrix:
+  exclude:
+    - rvm: 2.3.4
+      gemfile: gemfiles/rails6_0.gemfile
+    - rvm: 2.3.4
+      gemfile: gemfiles/rails6_1.gemfile
+    - rvm: 2.7.6
+      gemfile: gemfiles/rails5_2.gemfile

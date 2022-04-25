@@ -28,6 +28,10 @@ RSpec.configure do |config|
   config.before(:suite) do
     # Ensure database is empty before running specs
     DatabaseCleaner.clean_with :truncation
+
+    # With appraisal, asset cache from previous setups (e.g. CoffeeScript present -> none) may cause Sprockets failure
+    # cf. https://github.com/rails/sprockets/issues/183#issuecomment-162203288
+    Rails.cache.clear
   end
 
   config.before(:each) do
