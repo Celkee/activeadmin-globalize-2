@@ -18,3 +18,14 @@ appraise 'rails6_1' do
     gem 'puma'
   end
 end
+
+appraise 'rails7_0' do
+  gem 'rails', '~> 7.0.2'
+  gem 'activeadmin', '~> 2.12.0'
+
+  group :test do
+    gem 'capybara', '~> 3.33'
+    gem 'selenium-webdriver', '~> 4.1.0'
+    gem 'puma'
+  end
+end
