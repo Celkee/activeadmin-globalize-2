@@ -10,7 +10,7 @@ Makes it easy to translate your resource fields.
 Current version targets Rails >= 5.2 and ActiveAdmin >= 1.3.0.
 
 ```ruby
-gem 'activeadmin-globalize-2', '~> 1.0.0'
+gem 'activeadmin-globalize-2', '~> 2.0.0'
 ```
 
 ## Require Assets
