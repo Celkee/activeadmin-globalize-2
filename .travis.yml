@@ -1,6 +1,5 @@
 sudo: false
 language: ruby
-# Limit ruby versions to currently supported versions to avoid a big build matrix
 rvm:
   - 2.2.7
   - 2.3.4
@@ -12,3 +11,9 @@ gemfile:
   - gemfiles/rails4_2.gemfile
   - gemfiles/rails5_0.gemfile
   - gemfiles/rails5_1.gemfile
+matrix:
+  exclude:
+    - rvm: 2.3.4
+      gemfile: gemfiles/rails4_2.gemfile
+    - rvm: 2.4.1
+      gemfile: gemfiles/rails4_2.gemfile
