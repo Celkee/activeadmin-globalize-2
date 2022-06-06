@@ -3,6 +3,7 @@
 Makes it easy to translate your resource fields.
 
 [![Gem Version](https://badge.fury.io/rb/activeadmin-globalize-2.svg)](http://badge.fury.io/rb/activeadmin-globalize-2)
+[![Build Status](https://travis-ci.org/Celkee/activeadmin-globalize-2.svg?branch=master)](https://travis-ci.org/Celkee/activeadmin-globalize-2)
 
 ## Installation
 
