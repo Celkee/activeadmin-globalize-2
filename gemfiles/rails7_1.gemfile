@@ -7,8 +7,8 @@ gem "therubyrhino", platforms: :ruby
 gem "uglifier"
 gem "jquery-rails"
 gem "devise", "~> 4.5"
-gem "rails", "~> 6.0.4"
-gem "activeadmin", "~> 2.2.0"
+gem "rails", "~> 7.1"
+gem "activeadmin", "~> 3.3.0"
 
 group :test do
   gem "sqlite3", "~> 1.4.2"
@@ -22,6 +22,9 @@ group :test do
   gem "appraisal"
   gem "awesome_print"
   gem "pry"
+  gem "capybara", "~> 3.33"
+  gem "selenium-webdriver", "~> 4.26.0"
+  gem "puma", "~> 7.0.2"
 end
 
 gemspec path: "../"

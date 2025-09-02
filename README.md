@@ -94,6 +94,14 @@ to symbol (in application.rb)
   config.i18n.available_locales = [:en, :it, :de, :es, :"pt-BR"]
 ```
 
+## Testing
+
+```sh
+bundle install
+bundle exec appraisal install
+bundle exec appraisal rails7_1 rspec spec
+```
+
 ## Credits
 
 This is a fork of https://github.com/fabn/activeadmin-globalize and PRs have been opened to upstream the changes.

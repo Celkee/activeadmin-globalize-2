@@ -3,6 +3,8 @@ ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../dummy/config/environment', __FILE__)
 require 'rspec/rails'
 
+Capybara.server = :puma
+
 # Needed in rails4 to run specs, see https://github.com/activeadmin/activeadmin/issues/2712#issuecomment-46798603
 require_relative 'dummy/app/admin/articles'
 require_relative 'dummy/app/admin/admin_users'

@@ -17,13 +17,13 @@ group :test do
   gem "database_cleaner", "~> 1.0.1"
   gem "spring", require: false
   gem "spring-commands-rspec", require: false
-  gem "capybara", "~> 3.33"
   gem "capybara-screenshot"
-  gem "selenium-webdriver", "~> 4.1.0"
   gem "fuubar", "~> 2.2"
   gem "appraisal"
   gem "awesome_print"
   gem "pry"
+  gem "capybara", "~> 3.33"
+  gem "selenium-webdriver", "~> 4.1.0"
   gem "puma"
 end
 

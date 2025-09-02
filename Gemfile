@@ -24,7 +24,6 @@ gem 'uglifier'
 gem 'jquery-rails'
 
 gem 'devise', '~> 4.5'
-
 gem 'rails', '>= 5.2.7'
 
 group :test do
@@ -34,9 +33,7 @@ group :test do
   gem 'database_cleaner', '~> 1.0.1'
   gem 'spring', require: false
   gem 'spring-commands-rspec', require: false
-  gem 'capybara', '~> 2.15'
   gem 'capybara-screenshot'
-  gem 'selenium-webdriver', '~> 3.142.7'
   gem 'fuubar', '~> 2.2'
   gem 'appraisal'
   # Useful to debug tests

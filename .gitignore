@@ -1,6 +1,9 @@
 .bundle/
 .bin
 
+# Editor files
+.idea/
+
 # sqlite files
 *.sqlite3
 
