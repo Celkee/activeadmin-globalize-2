@@ -1,5 +1,9 @@
+.idea/
 .bundle/
 .bin
+
+# Fixed ruby version
+.ruby-version
 
 # sqlite files
 *.sqlite3
@@ -12,5 +16,7 @@ tmp/
 
 # Dummy app ignored stuff
 spec/dummy/db/*.sqlite3
+spec/dummy/db/*.sqlite3-shm
+spec/dummy/db/*.sqlite3-wal
 spec/dummy/log/*.log
 spec/dummy/tmp/

@@ -7,7 +7,7 @@ require 'active_admin/globalize/version'
 Gem::Specification.new do |s|
   s.name        = 'activeadmin-globalize-2'
   s.version     = ActiveAdmin::Globalize::VERSION
-  s.authors     = ['Stefano Verna', 'Fabio Napoleoni', 'tkalliom']
+  s.authors     = ['Stefano Verna', 'Fabio Napoleoni', 'tkalliom', 'shundread']
   s.homepage    = 'http://github.com/Celkee/activeadmin-globalize-2'
   s.summary     = 'Handles globalize translations'
   s.description = 'Handles globalize translations in ActiveAdmin >=1.3 and Rails >=5.2'

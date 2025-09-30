@@ -1,5 +1,5 @@
 require File.expand_path('../boot', __FILE__)
-
+require 'logger' # Tests with Ruby 3.1.2, Rails 6.1 combo will choke in the next line if this import is missing
 require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
