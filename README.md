@@ -110,16 +110,16 @@ There is currently a bit of a burden in running all tests and guaranteeing the e
 setups. The `.travis.yml` file gives a good idea of what ruby/rails version combinations have been confirmed to work in
 the past, although we don't currently have a CI environment setup for this library.
 
-The recommendation at this specific point is to set ruby to 3.1.2 and run the tests only for rails 7.1. These
-instructions will be updated soon as we verify support for rails 7.2 and ruby 3.2.
+The recommendation at this specific point is to set ruby to 3.2.2 and run the tests only for rails 7.2.
 
-### Testing for rails 7.1 (these instructions also currently work for rails 6.1, 7.0)
-```sh
-rbenv local 3.1.2  # Latest ruby version currently supported
+### Testing for rails 7.2 (If you're inclined to test older versions, this works for rails 7.1, 7.0 and 6.1)
+
+```
+rbenv local 3.2.2
 bundle install
 bundle exec appraisal install
 bundle exec rake db:schema:load
-bundle exec appraisal rails7_1 rspec spec
+bundle exec appraisal rails7_2 rspec spec
 ```
 
 ## Credits
