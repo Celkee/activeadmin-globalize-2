@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.files = Dir['{app,config,db,lib}/**/*'] + %w(MIT-LICENSE README.md)
 
   s.add_dependency 'activeadmin', '>= 1.3', '< 4.0'
-  s.add_dependency 'globalize', '>= 5.2', '< 7.0'
+  s.add_dependency 'globalize', '>= 5.2', '<= 7.0'
 
   # development dependencies
   s.add_development_dependency 'bundler', '>= 2.0.2'
